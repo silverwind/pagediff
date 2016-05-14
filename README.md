@@ -6,7 +6,7 @@
 
 ## Installation
 ```sh
-$ npm install pagediff
+$ npm install @silverwind/pagediff
 ```
 
 ## Usage
