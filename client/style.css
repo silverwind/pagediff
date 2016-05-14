@@ -55,7 +55,7 @@ button.loading {
   position: relative;
 }
 button.loading:after {
-  border-color: transparent transparent white white;
+  border-color: transparent transparent #fff #fff;
   border-width: 2px;
   border-style: solid;
   animation: spin 500ms infinite linear;
