@@ -1,6 +1,6 @@
 {
   "name": "pagediff",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Visually diff websites",
   "author": "silverwind <me@silverwind.io>",
   "repository": "silverwind/pagediff",
