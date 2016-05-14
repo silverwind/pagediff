@@ -1,0 +1,28 @@
+{
+  "name": "pagediff",
+  "version": "0.1.0",
+  "description": "Tool to visually diff websites",
+  "author": "silverwind <me@silverwind.io>",
+  "repository": "silverwind/pagediff",
+  "license": "BSD-2-Clause",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "node-resemble-js": "0.0.5",
+    "pageres": "^4.1.1",
+    "slugify-url": "^1.2.0"
+  },
+  "devDependencies": {
+    "bulma": "0.0.26",
+    "handlebars": "^4.0.5",
+    "jquery": "^2.2.3"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "client",
+    "server.js",
+  ],
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>pagediff</title>
+  <link rel="stylesheet" href="bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" sizes="32x32" href="icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="box main">
+    <h1 class="center"><span style="color:#c11">page</span><span style="color: #1c3">diff</span></h1>
+    <div class="columns">
+      <div class="column">
+        <textarea class="textarea" id="a" rows="4" placeholder="Domains from">google.de
+amazon.de
+https://news.ycombinator.com/</textarea>
+      </div>
+      <div class="column">
+        <textarea class="textarea" id="b" rows="4" placeholder="Domains to">google.com
+amazon.com
+https://news.ycombinator.com/?p=2</textarea>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column center">
+        <button class="button is-primary compare">Compare</button>
+      </div>
+    </div>
+  </div>
+  <div class="box result" style="display: none"></div>
+  <!-- Template -->
+  <script class="result-template" type="text/x-handlebars-template">
+    <div class="columns">
+      <div class="column has-text-centered">
+        <h4 class="title is-4"><a target="_blank" href="http://{{a}}">{{a}}</a></h4>
+        <a target="_blank" href="{{ai}}"><img src="{{ai}}"></img></a>
+      </div>
+      <div class="column has-text-centered">
+        <h4 class="title is-4"><a target="_blank" href="http://{{b}}">{{b}}</a></h4>
+        <a target="_blank" href="{{bi}}"><img src="{{bi}}"></img></a>
+      </div>
+      <div class="column has-text-centered">
+        <h4 class="title is-4">{{perc}}% different</h4>
+        <img src="{{diff}}"></img>
+      </div>
+    </div>
+  </script>
+  <script src="handlebars.min.js"></script>
+  <script src="jquery.min.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

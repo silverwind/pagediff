@@ -1,0 +1,37 @@
+@font-face {
+  font-family: font;
+  src: url("font.woff2") format("woff2"), url("font.woff") format("woff");
+}
+html {
+  font: 1.6rem/1 font, Helvetica, sans-serif;
+  font-variant-ligatures: none;
+  height: 100%;
+}
+body {
+  background: #e4e6e8;
+  color: #333;
+  padding: 1rem;
+  min-height: 100%;
+}
+.input, .textarea { box-shadow: none !important; resize: none}
+.button.is-primary, .pagination a.is-primary {
+  background: #27b !important;
+}
+.button.is-primary:hover, .pagination a.is-primary:hover, .button.is-primary:focus, .pagination a.is-primary:focus {
+  background: #16a !important;
+}
+.box {
+  background: #fff;
+  padding: .75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 .25rem .5rem rgba(0,0,0,.1);
+}
+.center { text-align: center; }
+.compare { padding: 0 5rem }
+.column { align-self: center; }
+.title { margin-bottom: 1rem }
+.h4 { color: inherit }
+img { box-shadow: 0 0 .6rem rgba(0,0,0,.3)}
+a { color: #27b } a:hover { color: #27b }
+h1 { margin-bottom: .75rem }
