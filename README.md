@@ -14,6 +14,6 @@ $ npm install @silverwind/pagediff
 $ npm start
 ```
 
-o to [`http://localhost:4000`](http://localhost:4000) and enter domains or URLs to compare.
+Go to [`http://localhost:4000`](http://localhost:4000) and enter domains or URLs to compare.
 
 © 2014-2015 [silverwind](https://github.com/silverwind), distributed under BSD licence
