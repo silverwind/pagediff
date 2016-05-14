@@ -19,7 +19,7 @@
     "jquery": "^2.2.3"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=4"
   },
   "files": [
     "client",
