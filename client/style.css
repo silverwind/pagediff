@@ -78,7 +78,14 @@ button.loading:after {
 .link { font-size: 1rem }
 .diff { font-size: 1.5rem }
 
-a { color: #27b } a:hover { color: #27b }
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #27b;
+  text-decoration: underline;
+}
 
 img {
   box-shadow: 0 0 .6rem rgba(0,0,0,.3);
