@@ -19,7 +19,12 @@ $(".compare").on("click", function() {
     return alert("Please only add a equal length list of domains or URLs to each box");
   }
   aValues.forEach(function(_, i) {
-    todo.push({a: aValues[i], b: bValues[i]});
+    todo.push({
+      a: aValues[i],
+      b: bValues[i],
+      w: window.innerWidth,
+      h: window.innerHeight,
+    });
   });
   todo.reverse();
 

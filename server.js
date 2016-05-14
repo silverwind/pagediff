@@ -28,8 +28,9 @@ app.use("/img", express.static(img, {maxAge: 0}));
 
 app.post("/diff", function(req, res) {
   var a = req.body.a, b = req.body.b;
+  var dims = req.body.w + "x" + req.body.h;
   new Pageres({delay: 2, crop: true, filename: "<%= url %>"})
-  .src(a, ["1366x768"]).src(b, ["1366x768"]).dest(img).run()
+  .src(a, [dims]).src(b, [dims]).dest(img).run()
   .then(function() {
     getDiff(a, b).then(function(diff) {
       res.json({
