@@ -12,6 +12,13 @@ const slugify = require("slugify-url");
 const client = join(__dirname, "client");
 const img = join(__dirname, "img");
 
+resemble.outputSettings({
+  errorColor: {red: 255, green: 0, blue: 0},
+  errorType: "movement",
+  transparency: 0.25,
+  largeImageThreshold: 0
+});
+
 function imgPath(name) { return join(img, slugify(name)) + ".png"; }
 function imgUrl(name) { return "img/" + slugify(name) + ".png"; }
 
