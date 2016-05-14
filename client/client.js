@@ -30,11 +30,12 @@ $(".compare").on("click", function() {
 
   // get images and diff
   (function next(values) {
+    var a = values.a, b = values.b;
     post("diff", values).then(function(res) {
       if (res.err) return alert(res.err);
       result.append(template({
-        a: values.a, "ai": res.a,
-        b: values.b, "bi": res.b,
+        a: a, ai: res.a, au: /^https?:\/\//.test(a) ? a : "http://" + a,
+        b: b, bi: res.b, bu: /^https?:\/\//.test(a) ? a : "http://" + a,
         perc: res.perc, diff: res.diff,
       }));
       result.fadeIn(200);
