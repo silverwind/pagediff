@@ -40,7 +40,7 @@ $(".compare").on("click", function() {
       if (res.err) return alert(JSON.stringify(res.err));
       result.append(template({
         a: a, ai: res.a, au: /^https?:\/\//.test(a) ? a : "http://" + a,
-        b: b, bi: res.b, bu: /^https?:\/\//.test(a) ? a : "http://" + a,
+        b: b, bi: res.b, bu: /^https?:\/\//.test(b) ? b : "http://" + b,
         perc: res.perc, diff: res.diff,
       }));
       result.fadeIn(200);
