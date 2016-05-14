@@ -1,37 +1,86 @@
-@font-face {
-  font-family: font;
-  src: url("font.woff2") format("woff2"), url("font.woff") format("woff");
+@charset "UTF-8";
+@font-face { font-family: font; src: url("font.woff2") format("woff2"); }
+* {
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 3px;
 }
 html {
-  font: 1.6rem/1 font, Helvetica, sans-serif;
+  font: 18px/1 font, Helvetica, sans-serif;
   font-variant-ligatures: none;
-  height: 100%;
+  height: calc(100% - .5rem);
 }
 body {
   background: #e4e6e8;
   color: #333;
-  padding: 1rem;
-  min-height: 100%;
+  padding: .25rem;
+  min-height: calc(100% - .5rem);
 }
-.input, .textarea { box-shadow: none !important; resize: none}
-.button.is-primary, .pagination a.is-primary {
-  background: #27b !important;
+h1 { margin: 0 0 .5rem  0 }
+textarea {
+  width: 100%;
+  resize: none;
+  text-align: left;
+  padding: .25rem;
+  border: 1px solid #ccc;
 }
-.button.is-primary:hover, .pagination a.is-primary:hover, .button.is-primary:focus, .pagination a.is-primary:focus {
-  background: #16a !important;
-}
+textarea:focus { border-color: #27b }
+.row { padding: .25rem 0 }
 .box {
   background: #fff;
-  padding: .75rem;
+  padding: .5rem 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 .25rem .5rem rgba(0,0,0,.1);
 }
-.center { text-align: center; }
-.compare { padding: 0 5rem }
-.column { align-self: center; }
-.title { margin-bottom: 1rem }
-.h4 { color: inherit }
-img { box-shadow: 0 0 .6rem rgba(0,0,0,.3)}
+.box + .box { margin-top: .5rem }
+/* compare button */
+.compare {
+  color: #fff;
+  background: #27b;
+  border: none;
+  padding: .25rem 2rem;
+  cursor: pointer;
+}
+.compare:hover {
+  background: #16a;
+}
+@keyframes spin {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to { transform: translate(-50%,-50%) rotate(359deg); }
+}
+button.loading {
+  color: transparent;
+  pointer-events: none;
+  position: relative;
+}
+button.loading:after {
+  border-color: transparent transparent white white;
+  border-width: 2px;
+  border-style: solid;
+  animation: spin 500ms infinite linear;
+  border-radius: 100%;
+  content: "";
+  height: 1em; width: 1em;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+}
+/* diff results */
+.result p {
+  margin: 0;
+  line-height: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: inherit;
+}
+.link { font-size: 1rem }
+.diff { font-size: 1.5rem }
+
 a { color: #27b } a:hover { color: #27b }
-h1 { margin-bottom: .75rem }
+
+img {
+  box-shadow: 0 0 .6rem rgba(0,0,0,.3);
+  width: 100%;
+}

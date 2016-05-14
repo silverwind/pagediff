@@ -2,52 +2,53 @@
 <html>
 <head>
   <title>pagediff</title>
-  <link rel="stylesheet" href="bulma.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" sizes="32x32" href="icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vendor/flexboxgrid.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACnElEQVR4Ab2WNbAmRRRGz52Zdd9NcHdLcE+wHMnxkA2REHfIcIgJcXdb3N3dHZ5M9/2orr+rnvYvW8w743a/U91jJolhuP65NWJIzjnsD2NIGkbg7AO+40tuocR2nMGNL29F4n8XkOCNvy/m69+epIeYgcFva39AoiMBjL/CR2CREum4ZF21QIUkwGe2gJEBSd0J4IYUwUKhfUAK0F0LWC+AyBRiip6AuhRwTQJh/nBIx3FV3Qi4G66JogCI6GPIO7wJg/+LK8wbjkHU2OhdcPkjW0qAGWjGjW1I6u3HAMP9H6CdG54X6bi84rJHthZS8XEmc96x31jjbpx2+H38segpiuS33N1f740rzC8AhPgPG4/+OL0tB9a65vHdSNjFD2ytvXffnrHwCXNReXvwvuLWknpr3vvgdy444UtrJENqcQ+U0Tx7xPwM3u+W8oxEI6+JaomKIxbbfFyBlJtokok87XAWCrepF1YjVURFXCwUvTxfPNUC7mnHAgpYRF5NtYCrZfLfmmFYtCzQj3asYRDVioCUBZJJjJGtNuzHIL7/882+LSVvhqpjVvGRfzcl8OF7y4EfEQKseNfvsHODFPoUrtn06o+AoTwXTNWcUT+3wEUnvWsMwfl37i2ramKkyKK6wVVx6SlvWwdfw4qaxUzqH0qYLe7wa4hRVYuRKJEEu/sfkBuV9RVIgt3+lFoKcJUFrFMBo6IZ0AKLQLE7gRQgypgtQvIOu4Ca+NdSStjaGjmbJ2BmFZAnGqCGqeXGOw4gsfW2e9IXGWa2AxCmJtq8jHlySRGgyeE1YDm8pofytA7YgIwXXhhnMMZBJyza5cUH2s9z2N+A6GE5M5gZgEwSlrayQLbzLLYCWAWsyWKijABPgXlqJY0xgP8ARwt/I1fu/sUAAAAASUVORK5CYII=">
 </head>
 <body>
   <div class="box main">
-    <h1 class="center"><span style="color:#c11">page</span><span style="color: #1c3">diff</span></h1>
-    <div class="columns">
-      <div class="column">
-        <textarea class="textarea" id="a" rows="4" placeholder="Domains from">google.de
+    <h1><span style="color:#c11">page</span><span style="color: #1c3">diff</span></h1>
+    <div class="row">
+      <div class="col-xs">
+        <textarea id="a" rows="5" placeholder="Domains/URLs from">google.de
 amazon.de
 https://news.ycombinator.com/</textarea>
       </div>
-      <div class="column">
-        <textarea class="textarea" id="b" rows="4" placeholder="Domains to">google.com
+      <div class="col-xs">
+        <textarea id="b" rows="5" placeholder="Domains/URLs to">google.com
 amazon.com
 https://news.ycombinator.com/?p=2</textarea>
       </div>
     </div>
-    <div class="columns">
-      <div class="column center">
-        <button class="button is-primary compare">Compare</button>
+    <div class="row">
+      <div class="col-xs">
+        <button class="compare">Compare</button>
       </div>
     </div>
   </div>
   <div class="box result" style="display: none"></div>
   <!-- Template -->
   <script class="result-template" type="text/x-handlebars-template">
-    <div class="columns">
-      <div class="column has-text-centered">
-        <h4 class="title is-4"><a target="_blank" href="{{au}}">{{a}}</a></h4>
+    <div class="row">
+      <div class="col-xs-3">
+        <p class="link"><a target="_blank" href="{{au}}">{{a}}</a></p>
         <a target="_blank" href="{{ai}}"><img src="{{ai}}"></img></a>
       </div>
-      <div class="column has-text-centered">
-        <h4 class="title is-4"><a target="_blank" href="{{bu}}">{{b}}</a></h4>
-        <a target="_blank" href="{{bi}}"><img src="{{bi}}"></img></a>
-      </div>
-      <div class="column has-text-centered">
-        <h4 class="title is-4">{{perc}}% different</h4>
+      <div class="col-xs-6">
+        <p class="diff">{{perc}}% different</p>
         <img src="{{diff}}"></img>
+      </div>
+      <div class="col-xs-3">
+        <p class="link"><a target="_blank" href="{{bu}}">{{b}}</a></p>
+        <a target="_blank" href="{{bi}}"><img src="{{bi}}"></img></a>
       </div>
     </div>
   </script>
-  <script src="handlebars.min.js"></script>
-  <script src="jquery.min.js"></script>
+  <!-- JS -->
+  <script src="vendor/handlebars.min.js"></script>
+  <script src="vendor/jquery.min.js"></script>
   <script src="client.js"></script>
 </body>
 </html>

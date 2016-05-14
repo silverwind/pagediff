@@ -5,7 +5,7 @@ var template = Handlebars.compile($(".result-template").html());
 
 $(".compare").on("click", function() {
   var btn = $(this), result = $(".result");
-  if (btn.hasClass("is-loading")) return;
+  if (btn.hasClass("loading")) return;
 
   // parse and validate input
   var todo = [];
@@ -26,7 +26,7 @@ $(".compare").on("click", function() {
   // ui state
   result.fadeOut(200);
   setTimeout(function() {result.empty();}, 200);
-  btn.addClass("is-loading");
+  btn.addClass("loading");
 
   // get images and diff
   (function next(values) {
@@ -40,7 +40,7 @@ $(".compare").on("click", function() {
       }));
       result.fadeIn(200);
       if (!todo.length) {
-        btn.removeClass("is-loading");
+        btn.removeClass("loading");
       } else next(todo.pop());
     });
   })(todo.pop());
