@@ -37,7 +37,7 @@ $(".compare").on("click", function() {
   (function next(values) {
     var a = values.a, b = values.b;
     post("diff", values).then(function(res) {
-      if (res.err) return alert(res.err);
+      if (res.err) return alert(JSON.stringify(res.err));
       result.append(template({
         a: a, ai: res.a, au: /^https?:\/\//.test(a) ? a : "http://" + a,
         b: b, bi: res.b, bu: /^https?:\/\//.test(a) ? a : "http://" + a,

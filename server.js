@@ -13,9 +13,9 @@ const client = join(__dirname, "client");
 const img = join(__dirname, "img");
 
 resemble.outputSettings({
-  errorColor: {red: 255, green: 0, blue: 0},
+  errorColor: {red: 255, green: 64, blue: 64},
   errorType: "movement",
-  transparency: 0.25,
+  transparency: 0.2,
   largeImageThreshold: 0
 });
 
@@ -42,6 +42,7 @@ app.post("/diff", function(req, res) {
       });
     });
   }).catch(function(err) {
+    console.error(err);
     res.json({err: err});
   });
 });
