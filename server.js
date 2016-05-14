@@ -54,7 +54,7 @@ function getDiff(a, b) {
   return new Promise(function(resolve) {
     fs.readFile(imgPath(a), function(_, aData) {
       fs.readFile(imgPath(b), function(_, bData) {
-        resemble(aData).compareTo(bData).ignoreColors().onComplete(function(data) {
+        resemble(aData).compareTo(bData).ignoreAntialiasing().ignoreColors().onComplete(function(data) {
           data.getDiffImage().pack().pipe(fs.createWriteStream(imgPath(a + "-" + b)));
           resolve({perc: data.misMatchPercentage});
         });
