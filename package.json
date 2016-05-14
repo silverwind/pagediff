@@ -14,7 +14,6 @@
     "slugify-url": "^1.2.0"
   },
   "devDependencies": {
-    "bulma": "0.0.26",
     "flexboxgrid": "^6.3.0",
     "handlebars": "^4.0.5",
     "jquery": "^2.2.3"
