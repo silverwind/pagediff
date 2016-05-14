@@ -4,16 +4,13 @@
 ## Preview
 ![](https://raw.githubusercontent.com/silverwind/pagediff/master/screenshot.png)
 
-## Installation
+## Installation and Usage
 ```sh
-$ npm install @silverwind/pagediff
+$ git clone git@github.com:silverwind/pagediff.git
+$ cd pagediff
+$ npm i
+$ ./server.js
 ```
-
-## Usage
-```sh
-$ npm start
-```
-
 Go to [`http://localhost:4000`](http://localhost:4000) and enter domains or URLs to compare.
 
 © 2014-2015 [silverwind](https://github.com/silverwind), distributed under BSD licence
