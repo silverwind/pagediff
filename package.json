@@ -1,7 +1,7 @@
 {
   "name": "pagediff",
   "version": "0.1.0",
-  "description": "Tool to visually diff websites",
+  "description": "Visually diff websites",
   "author": "silverwind <me@silverwind.io>",
   "repository": "silverwind/pagediff",
   "license": "BSD-2-Clause",
@@ -23,6 +23,15 @@
   },
   "files": [
     "client",
-    "server.js",
+    "server.js"
   ],
+  "keywords": [
+    "diff",
+    "website",
+    "webpage",
+    "site",
+    "web site",
+    "web page",
+    "image"
+  ]
 }
