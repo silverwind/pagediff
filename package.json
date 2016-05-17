@@ -7,9 +7,9 @@
   "license": "BSD-2-Clause",
   "main": "server.js",
   "dependencies": {
+    "blink-diff": "^1.0.12",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
-    "node-resemble-js": "https://github.com/Rafi993/node-resemble.js",
     "pageres": "^4.1.1",
     "slugify-url": "^1.2.0"
   },
