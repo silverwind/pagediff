@@ -5,7 +5,7 @@
   "author": "silverwind <me@silverwind.io>",
   "repository": "silverwind/pagediff",
   "license": "BSD-2-Clause",
-  "main": "server.js",
+  "main": "index.js",
   "dependencies": {
     "blink-diff": "^1.0.12",
     "body-parser": "^1.15.1",
