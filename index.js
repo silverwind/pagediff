@@ -22,7 +22,7 @@ module.exports = function pagediff(a, b, w, h, delay) {
         return createBlankPng(imgPath(a), w, h);
       }),
       new Pageres({delay: delay, crop: true, filename: slugify(b)}).src(b, [dims]).dest(img).run().catch(function() {
-        return createBlankPng(imgPath(a), w, h);
+        return createBlankPng(imgPath(b), w, h);
       }),
     ]).then(function() {
       return new Promise((resolve, reject) => {
