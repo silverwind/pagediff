@@ -4,11 +4,13 @@
 process.title = "pagediff";
 
 const join = require("path").join;
+const fs = require("fs");
 const express = require("express");
 const app = express();
 const Pageres = require("pageres");
 const bd = require("blink-diff");
 const slugify = require("slugify-url");
+const ImageJS = require("imagejs");
 
 const client = join(__dirname, "client");
 const img = join(__dirname, "img");
@@ -23,8 +25,14 @@ app.use("/img", express.static(img, {maxAge: 0}));
 
 app.post("/diff", (req, res) => {
   const a = req.body.a, b = req.body.b, dims = req.body.w + "x" + req.body.h;
-  new Pageres({delay: 1, crop: false, filename: "<%= url %>"})
-  .src(a, [dims]).src(b, [dims]).dest(img).run().then(() => getDiff(a, b)).then(perc => {
+  Promise.all([
+    new Pageres({delay: 1, crop: false, filename: slugify(a)}).src(a, [dims]).dest(img).run().catch(function() {
+      return createBlankPng(imgPath(a), req.body.w, req.body.h);
+    }),
+    new Pageres({delay: 1, crop: false, filename: slugify(b)}).src(b, [dims]).dest(img).run().catch(function() {
+      return createBlankPng(imgPath(a), req.body.w, req.body.h);
+    }),
+  ]).then(() => getDiff(a, b)).then(perc => {
     res.json({
       a: imgUrl(a),
       b: imgUrl(b),
@@ -58,5 +66,13 @@ function getDiff(a, b) {
       if (err) return reject(err);
       resolve(Math.round((res.differences / res.dimension) * 1e4) / 1e2);
     });
+  });
+}
+
+function createBlankPng(path, w, h) {
+  return new Promise(function(resolve) {
+    var ws = fs.createWriteStream(path);
+    var bitmap = new ImageJS.Bitmap({width: w, height: h, color: {r: 255, g: 255, b: 255, a: 255}});
+    bitmap.write(ws, {type: ImageJS.ImageType.PNG}).then(resolve);
   });
 }

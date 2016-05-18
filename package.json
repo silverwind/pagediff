@@ -10,6 +10,7 @@
     "blink-diff": "^1.0.12",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
+    "imagejs": "0.0.9",
     "pageres": "^4.1.2",
     "slugify-url": "^1.2.0"
   },
