@@ -14,14 +14,14 @@ const img = join(__dirname, "img");
 function imgPath(name) { return join(img, slugify(name)) + ".png"; }
 function imgUrl(name) { return "img/" + slugify(name) + ".png"; }
 
-module.exports = function pagediff(a, b, w, h) {
+module.exports = function pagediff(a, b, w, h, delay) {
   return new Promise(function(resolve, reject) {
     const dims = w + "x" + h;
     Promise.all([
-      new Pageres({delay: 1, crop: true, filename: slugify(a)}).src(a, [dims]).dest(img).run().catch(function() {
+      new Pageres({delay: delay, crop: true, filename: slugify(a)}).src(a, [dims]).dest(img).run().catch(function() {
         return createBlankPng(imgPath(a), w, h);
       }),
-      new Pageres({delay: 1, crop: true, filename: slugify(b)}).src(b, [dims]).dest(img).run().catch(function() {
+      new Pageres({delay: delay, crop: true, filename: slugify(b)}).src(b, [dims]).dest(img).run().catch(function() {
         return createBlankPng(imgPath(a), w, h);
       }),
     ]).then(function() {
