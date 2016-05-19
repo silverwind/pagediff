@@ -11,7 +11,8 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "imagejs": "0.0.9",
-    "pageres": "^4.1.2",
+    "protocolify": "^1.0.3",
+    "screenshot-stream": "^3.4.0",
     "slugify-url": "^1.2.0"
   },
   "devDependencies": {
