@@ -56,17 +56,29 @@ module.exports = function pagediff(a, b, w, h, delay) {
 
 function createScreenshot(name, w, h, delay) {
   return new Promise(function(resolve) {
-    var opts = {crop: true, delay: delay, timeout: delay + 2};
+    var timeout = delay + 2, done = false;
+    var opts = {crop: true, delay: delay, timeout: timeout};
     var input = screenshotStream(protocolify(name), w + "x" + h, opts);
     var output = fs.createWriteStream(imgPath(name));
     input.pipe(output);
-    input.on("finish", resolve);
+    input.on("finish", function() {
+      done = true;
+      resolve();
+    });
     input.on("error", error);
     output.on("error", error);
+
+    setTimeout(function() {
+      if (!done) error();
+    }, timeout * 1000);
+
     function error() {
       input.unpipe(output);
       output.end(function() {
-        createBlank(imgPath(name), w, h).then(resolve);
+        createBlank(imgPath(name), w, h).then(function() {
+          done = true;
+          resolve();
+        });
       });
     }
   });
