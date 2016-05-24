@@ -17,7 +17,7 @@ app.use("/", express.static(client, {maxAge: 0}));
 app.use("/img", express.static(img, {maxAge: 0}));
 
 app.post("/diff", (req, res) => {
-  pagediff(req.body.a, req.body.b, req.body.w, req.body.h, 2).then(function(result) {
+  pagediff(req.body.a, req.body.b, req.body.w, req.body.h, 6).then(function(result) {
     res.json(result);
   });
 });

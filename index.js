@@ -70,7 +70,7 @@ function createScreenshot(name, w, h, delay) {
 
     setTimeout(function() {
       if (!done) error();
-    }, timeout * 1000);
+    }, (timeout * 1000) + 2000);
 
     function error() {
       input.unpipe(output);
