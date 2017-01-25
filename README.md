@@ -1,4 +1,5 @@
-# pagediff [![](https://img.shields.io/npm/v/@silverwind/pagediff.svg?style=flat)](https://www.npmjs.org/package/@silverwind/pagediff) [![](http://img.shields.io/david/silverwind/pagediff.svg?style=flat)](https://david-dm.org/silverwind/pagediff)
+# pagediff
+[![](https://img.shields.io/npm/v/pagediff.svg?style=flat)](https://www.npmjs.org/package/pagediff) [![](https://img.shields.io/npm/dm/pagediff.svg)](https://www.npmjs.org/package/pagediff) [![](https://api.travis-ci.org/silverwind/pagediff.svg?style=flat)](https://travis-ci.org/silverwind/pagediff)
 > Visually diff websites
 
 ## Preview
