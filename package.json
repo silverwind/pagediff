@@ -7,18 +7,18 @@
   "license": "BSD-2-Clause",
   "main": "index.js",
   "dependencies": {
-    "blink-diff": "^1.0.12",
-    "body-parser": "^1.15.1",
-    "express": "^4.13.4",
+    "blink-diff": "^1.0.13",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "imagejs": "0.0.9",
-    "protocolify": "^1.0.3",
-    "screenshot-stream": "^3.4.0",
+    "protocolify": "^2.0.0",
+    "screenshot-stream": "^4.2.0",
     "slugify-url": "^1.2.0"
   },
   "devDependencies": {
-    "flexboxgrid": "^6.3.0",
-    "handlebars": "^4.0.5",
-    "jquery": "^2.2.3"
+    "flexboxgrid": "^6.3.1",
+    "handlebars": "^4.0.11",
+    "jquery": "^3.3.1"
   },
   "engines": {
     "node": ">=4"
